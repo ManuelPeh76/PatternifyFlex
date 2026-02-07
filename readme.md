@@ -1,3 +1,4 @@
+[German version](https://github.com/ManuelPeh76/PatternifyFlex/readme_de.md)
 # Patternify Flex
 
 **Patternify Flex** is a versatile pixel editor and compact graphics toolkit that lets you design, save, and play pixel patterns, graphics, and animations directly in your browser.
