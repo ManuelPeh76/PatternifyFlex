@@ -20,7 +20,7 @@ Clone or download the project.
 
 
 3. **Start:**
-Open `index.html` directly in your browser. You can start a local web server (e.g., with Python) and open the tool through it, or simply double-click it, for example, with Firefox (the file log often works without problems).
+Open `index.html` directly in your browser. You can start a local web server (e.g., with Python) and open the tool through it, or simply double-click it, for example, with Firefox (the file protocol often works without problems).
 
 4. **Info:**
 Further details and tips, keyboard shortcuts and how to customize them, as well as the recorder, can be found in the tool menu (three lines).
@@ -87,7 +87,7 @@ No complicated installation:
 git clone https://github.com/ManuelPeh76/PatternifyFlex
 ```
 
-Open `index.html` in your browser. The file:-- protocol works perfectly here.
+Open `index.html` in your browser. The file: protocol works perfectly here.
 
 ## Using the Recorder and Rec Editor in Patternify Flex
 ### **1. What is the Recorder?**
@@ -154,7 +154,7 @@ This is where the "pro mode" begins: Every recorded element in your record log c
 
 ---
 
-**In Short:**
+### **In Short:**
 With the Recorder and Rec Editor, you can transform Patternify Flex from a pixel editor into a smoothA versatile animation and sequence toolkit – perfect for creative pixel playbacks, tutorials, showcases, or custom pattern macros.
 
 ---
@@ -219,9 +219,9 @@ Example of drawing a rectangle:
 
         Rectangle   Eraser?
              | StartY |   EndY  Shape ID (important for editing in the Rec Editor)
-             |    |   |    |     |
-Action: [275,6,[1,2,1,0,16,23,0],1]   <-- Wait 275ms, then finish drawing the rectangle
-          |     |   |   |     |           from x1/y2 to x16/y23.
+             ↓    ↓   ↓    ↓     ↓
+Action: [275,6,[1,2,1,0,16,23,0],1]     ← Wait 275ms, then finish drawing the rectangle
+          ↑     ↑   ↑   ↑     ↑           from x1/y2 to x16/y23.
           |  StartX |  EndX   |
         Delay   Finished?  Filled?
         
@@ -235,149 +235,148 @@ The editor searches for the beginning of the shape (where endX=null and endY=nul
 and then deletes all actions with the same ID. This is provided if the "Delete shapes as a whole" checkbox is selected;
 otherwise, only the individual action next to which the minus symbol was clicked will be deleted.
 
-```
 ### The following list contains all options for all tools:
 ```
 Action:
     [Delay, Tool, [Details]]
-              ↓     ↓
+              ↓         ↓
               0: HEADER
-                    0: Date
-                    1: Name
-                    2: Matrix
-                    3: X-Limit
-                    4: Y-Limit
-                    5: Total X-Fields
-                    6: Total Y-Fields
-                    7: Color Red (0-255)
-                    8: Color Green (0-255)
-                    9: Color Blue (0-255)
-                    10: Opacity (0.01-1.00)
-                    11: Status of the resize checkbox 'Take Pattern' 
-                    12: Status of the image load checkbox 'Original size' 
+                        0: Date
+                        1: Name
+                        2: Matrix
+                        3: X-Limit
+                        4: Y-Limit
+                        5: Total X-Fields
+                        6: Total Y-Fields
+                        7: Color Red (0-255)
+                        8: Color Green (0-255)
+                        9: Color Blue (0-255)
+                        10: Opacity (0.01-1.00)
+                        11: Status of the resize checkbox 'Take Pattern' 
+                        12: Status of the image load checkbox 'Original size' 
               
               1: SINGLE PIXEL 
-                    0: X coordinate 
-                    1: Y coordinate 
-                    2: Erase 
+                        0: X coordinate 
+                        1: Y coordinate 
+                        2: Erase 
               
               2: WHOLE PATTERN 
-                    0: Matrix including pixelsX, pixelsY, xcursor and ycursor 
+                        0: Matrix including pixelsX, pixelsY, xcursor and ycursor 
               
-              3: X and Y CURSOR 
-                    0: X cursor 
-                    1: Y cursor 
+              3: X and Y DELIMITER 
+                        0: X cursor 
+                        1: Y cursor 
               
               4: MOVE CURSOR 
-                    0: X coordinate 
-                    1: Y coordinate 
+                        0: X coordinate 
+                        1: Y coordinate 
               
               5: CALL JQUERY 
-                    0: Left Hand part (Replacements: '#' => ~id~, '.' => ~class~) 
-                    1: Right hand part 
+                        0: Left Hand part (Replacements: '#' => ~id~, '.' => ~class~) 
+                        1: Right hand part 
                     
               6: RECTANGLE 
-                    0: Start X 
-                    1: Start Y 
-                    2: finish 
-                    3: Erase 
-                    4: Target X 
-                    5: Target Y 
-                    6: Filled 
+                        0: Start X 
+                        1: Start Y 
+                        2: finish 
+                        3: Erase 
+                        4: Target X 
+                        5: Target Y 
+                        6: Filled 
               7: LINE 
-                    0: Start X 
-                    1: Start Y 
-                    2: finish 
-                    3: Erase 
-                    4: Target X 
-                    5: Target Y 
+                        0: Start X 
+                        1: Start Y 
+                        2: finish 
+                        3: Erase 
+                        4: Target X 
+                        5: Target Y 
               
               8: MOVE GRID 
-                    0: Direction 
+                        0: Direction 
               
               9: COLOR CHANGE 
-                    0: Ed 
-                    1: Green 
-                    2: Blue 
-                    3: Opacity 
+                        0: Ed 
+                        1: Green 
+                        2: Blue 
+                        3: Opacity 
               
               10: OPACITY CHANGE 
-                    0: Opacity (in percent) 
+                        0: Opacity (in percent) 
               
               11: TEXT OUTPUT 
-                    0: Input Field number, one of 
-                          0: Resize: X value 
-                          1: Resize: Y value 
-                          2: Base64 text field 
-                          3: Image: New Width 
-                          4: Image: New Height 
-                          5: Color Field (Hex) 
-                          6: Opacity Field (0-100) 
-                          1: Text Content 
+                        0: Input Field number, one of 
+                              0: Resize: X value 
+                              1: Resize: Y value 
+                              2: Base64 text field 
+                              3: Image: New Width 
+                              4: Image: New Height 
+                              5: Color Field (Hex) 
+                              6: Opacity Field (0-100) 
+                              1: Text Content 
               
               12: HIGHLIGHT TOOL (the 'none' entries are important for compatibility with the draw modes) 
-                    0: Tool Number 
-                          0: (none) 
-                          1: Pencil 
-                          2: Eraser 
-                          3: Eyedroppers 
-                          4: Line 
-                          5: (none) 
-                          6: Rectangle 
-                          7: (none) 
-                          8: Ellipse 
-                          9: (none) 
-                          10: Move 
-                          11: Parallelogram 
-                          12: (none) 
-                          13: (none) 
-                          14: Polygon 
-                          15: (none) 
-                          16: OpenImage 
-                          17: Get Matrix 
+                        0: Tool Number 
+                              0: (none) 
+                              1: Pencil 
+                              2: Eraser 
+                              3: Eyedroppers 
+                              4: Line 
+                              5: (none) 
+                              6: Rectangle 
+                              7: (none) 
+                              8: Ellipse 
+                              9: (none) 
+                              10: Move 
+                              11: Parallelogram 
+                              12: (none) 
+                              13: (none) 
+                              14: Polygon 
+                              15: (none) 
+                              16: OpenImage 
+                              17: Get Matrix 
               
               13: ELLIPSE 
-                    0: Start X 
-                    1: Start Y 
-                    2: finish 
-                    3: Erase 
-                    4: Target X 
-                    5: Target Y 
+                        0: Start X 
+                        1: Start Y 
+                        2: finish 
+                        3: Erase 
+                        4: Target X 
+                        5: Target Y 
               
               14: OPEN/CLOSE AREA 
-                    0: Area 
-                    info 
-                    help 
-                    keys 
-                    record 
-                    x (close areas) 
+                        0: Area 
+                        info 
+                        help 
+                        keys 
+                        record 
+                        x (close areas) 
               
               15: EXECUTE INSTRUCTION 
-                    0: User Command 
-                          0: Preview off 
-                          1: Preview on 
-                          2: Hide Preview 
-                          3: Show preview 
-                          4: Hide tools 
-                          5: Show Tools 
-                          6: Hide presets 
-                          7: Show Presets 
-                          8: Set playback speed 
-                                0: Speed ​​value 
-                          9: Run pattern as marquee 
-                                0: Matrix object incl. 
-                                   pixelsX = pixelsY ('Window' size) 
-                                   and marquee (total length of the image) 
-                          10: User command 
-                                0: command (Javascript) 
-                          11: Jump to item 
-                                0: Item number (visible in editor) 
+                        0: User Command 
+                              0: Preview off 
+                              1: Preview on 
+                              2: Hide Preview 
+                              3: Show preview 
+                              4: Hide tools 
+                              5: Show Tools 
+                              6: Hide presets 
+                              7: Show Presets 
+                              8: Set playback speed 
+                                    0: Speed ​​value 
+                              9: Run pattern as marquee 
+                                    0: Matrix object incl. 
+                                       pixelsX = pixelsY ('Window' size) 
+                                       and marquee (total length of the image) 
+                              10: User command 
+                                    0: command (Javascript) 
+                              11: Jump to item 
+                                    0: Item number (visible in editor) 
               
               16: CALL FUNCTION 
-                    0: function name 
-                    1: function parameters 
-                    2: async function 
-              
+                        0: function name 
+                        1: function parameters 
+                        2: async function 
+                  
               17: LOAD NEW GRID CONFIGURATION 
                     0: Matrix (array) 
                     1: X limit 
@@ -386,38 +385,38 @@ Action:
                     4: Y-Fields total 
                     
               18: PARALLELOGRAM 
-                    0: a X coordinate 
-                    1: a Y coordinate 
-                    2: b X coordinate 
-                    3: b Y coordinate 
-                    4: Line from finished 
-                    5: c X coordinate 
-                    6: c Y coordinate 
-                    7: finish 
+                        0: a X coordinate 
+                        1: a Y coordinate 
+                        2: b X coordinate 
+                        3: b Y coordinate 
+                        4: Line from finished 
+                        5: c X coordinate 
+                        6: c Y coordinate 
+                        7: finish 
               
               19: POLYGON 
-                    0: (array) [ (object/s) {xc: X coordinate, yc: Y coordinate}, {xc: ...} ] 
-                    1: finish 
+                        0: (array) [ (object/s) {xc: X coordinate, yc: Y coordinate}, {xc: ...} ] 
+                        1: finish 
               
               20: RUN TEXT MARQUEE 
-                    0: text 
-                    1: Font Family 
-                    2: Font Size 
+                        0: text 
+                        1: Font Family 
+                        2: Font Size 
               
               21: DRAW TEXT 
-                    0: text 
-                    1: Font Family 
-                    2: Font Size 
+                        0: text 
+                        1: Font Family 
+                        2: Font Size 
               
               22: CHANGE TEXTAREA VALUE 
-                    0: ID, one of 
-                          draw text 
-                          font 
-                          text size 
-                    1: Content, depending on ID
-                          draw-text: text 
-                          font: Name of the Font Family 
-                          text-size: (size in pixels)px
+                        0: ID, one of 
+                              draw text 
+                              font 
+                              text size 
+                        1: Content, depending on ID
+                              draw-text: text 
+                              font: Name of the Font Family 
+                              text-size: (size in pixels)px
 ```
 
 ---
