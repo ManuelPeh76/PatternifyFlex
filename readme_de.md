@@ -1,4 +1,4 @@
-[English Readme](https://github.com/ManuelPeh76/PatternifyFlex/blob/main/readme_de.md)
+[English Readme](https://github.com/ManuelPeh76/PatternifyFlex/blob/main/readme.md)
 
 # Patternify Flex
 
