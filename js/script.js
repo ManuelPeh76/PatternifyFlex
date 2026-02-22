@@ -363,7 +363,6 @@ docMousedown = e => {
 },
 
 idleLine = {
-    line: 0,
     time: 0,
     line: null,
     create: (time) => {
